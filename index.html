@@ -1,201 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pomuna | Coming Soon</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pomuna designs and builds distinctive, high-performing websites for ambitious businesses." />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>Pomuna — Websites with a point of view</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Pomuna home"><img src="./assets/pomuna-mark.svg" alt="" /><span>Pomuna</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#work" data-i18n="nav.work">What we build</a><a href="#process" data-i18n="nav.process">Process</a><a href="#about" data-i18n="nav.about">About</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language"><button type="button" class="lang-button active" data-lang="en">EN</button><span>/</span><button type="button" class="lang-button" data-lang="de">DE</button></div>
+        <a class="header-cta" href="#contact"><span data-i18n="nav.start">Start a project</span> <b>↗</b></a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </header>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-kicker reveal"><span class="pulse"></span><span data-i18n="hero.kicker">Independent digital studio · Vienna / Worldwide</span></div>
+        <h1 class="reveal" data-i18n-html="hero.title">Websites with<br />a <em>point of view.</em></h1>
+        <div class="hero-bottom reveal">
+          <p data-i18n="hero.body">Pomuna turns complex businesses into clear, memorable digital experiences—designed to earn attention and built to create action.</p>
+          <a class="circle-link" href="#work" aria-label="Explore our work"><span data-i18n-html="hero.explore">Explore<br />the studio</span><b>↓</b></a>
+        </div>
+      </section>
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(177, 196, 163, 0.18), transparent 32%),
-        radial-gradient(circle at 80% 70%, rgba(104, 129, 111, 0.16), transparent 35%),
-        #f4f1e9;
-      color: #1f3028;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+      <section class="marquee" aria-label="Pomuna services"><div class="marquee-track">
+        <span data-i18n="marquee.strategy">Strategy</span><i>✦</i><span data-i18n="marquee.web">Web design</span><i>✦</i><span data-i18n="marquee.dev">Development</span><i>✦</i><span data-i18n="marquee.threed">3D &amp; visual design</span><i>✦</i><span data-i18n="marquee.catalogues">Catalogues</span><i>✦</i>
+        <span data-i18n="marquee.strategy">Strategy</span><i>✦</i><span data-i18n="marquee.web">Web design</span><i>✦</i><span data-i18n="marquee.dev">Development</span><i>✦</i><span data-i18n="marquee.threed">3D &amp; visual design</span><i>✦</i><span data-i18n="marquee.catalogues">Catalogues</span><i>✦</i>
+      </div></section>
 
-    .grid {
-      position: fixed;
-      inset: 0;
-      opacity: 0.4;
-      background-image:
-        linear-gradient(rgba(31, 48, 40, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(31, 48, 40, 0.06) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(circle, black 20%, transparent 75%);
-    }
+      <section class="intro section-pad" id="about">
+        <p class="eyebrow reveal" data-i18n="intro.label">01 / The studio</p>
+        <div class="intro-grid"><h2 class="reveal" data-i18n-html="intro.title">Good design makes a business feel <span>obvious.</span></h2><div class="intro-copy reveal"><p data-i18n="intro.body">No clutter. No vague promises. We find what matters, shape a distinctive direction, and build a website that guides the right people toward the next step.</p><a class="text-link" href="#process"><span data-i18n="intro.link">How we work</span> <span>↘</span></a></div></div>
+      </section>
 
-    .shape {
-      position: fixed;
-      border: 1px solid rgba(31, 48, 40, 0.12);
-      border-radius: 50%;
-      animation: float 14s ease-in-out infinite;
-    }
+      <section class="work section-pad" id="work">
+        <div class="section-heading reveal"><div><p class="eyebrow" data-i18n="work.label">02 / What we build</p><h2 data-i18n-html="work.title">Different businesses.<br />One clear standard.</h2></div><p data-i18n-html="work.subtitle">Flexible enough for your industry.<br />Focused enough to feel made for it.</p></div>
+        <div class="work-grid">
+          <article class="work-card work-card--coral reveal">
+            <div class="card-meta"><span>01</span><span data-i18n="work.service.meta">Trust &amp; enquiries</span></div>
+            <div class="clinic-ui" aria-hidden="true"><div class="mini-nav"><b>North</b><span>Services&nbsp;&nbsp; Team&nbsp;&nbsp; Visit</span><i>Book now</i></div><div class="clinic-body"><small>CARE THAT FEELS CLEAR</small><strong>Feel heard.<br />Feel better.</strong><div class="portrait-shape"></div></div></div>
+            <div class="card-copy"><h3 data-i18n="work.service.title">Service businesses</h3><p data-i18n="work.service.body">Confident websites that turn expertise into trust—and trust into conversations.</p></div>
+          </article>
+          <article class="work-card work-card--ink reveal">
+            <div class="card-meta"><span>02</span><span data-i18n="work.commerce.meta">Catalogues &amp; commerce</span></div>
+            <div class="parts-ui" aria-hidden="true"><div class="parts-top"><b>FORGE/01</b><span>Find a part</span><i>⌕</i></div><div class="part-disc"><div></div></div><strong>Built for the<br />hard work.</strong><div class="spec-row"><span>AL-6061</span><span>120 × 30 MM</span><span>IN STOCK</span></div></div>
+            <div class="card-copy"><h3 data-i18n="work.commerce.title">Commerce &amp; industry</h3><p data-i18n="work.commerce.body">Structured product experiences that make discovery, comparison and quotation effortless.</p></div>
+          </article>
+          <article class="work-card work-card--lime reveal">
+            <div class="card-meta"><span>03</span><span data-i18n="work.product.meta">Products &amp; platforms</span></div>
+            <div class="product-ui" aria-hidden="true"><div class="product-window"><div class="product-bar"><i></i><i></i><i></i><span>atlas.workspace / overview</span><b>AR</b></div><div class="product-shell"><aside><strong>A</strong><i></i><i></i><i></i><i></i></aside><div class="product-main"><div class="product-heading"><div><small>WORKSPACE OVERVIEW</small><h4>Good morning, Anna.</h4></div><button>+ New project</button></div><div class="metric-row"><div><small>ACTIVE PROJECTS</small><b>24</b><em>+8%</em></div><div><small>TEAM VELOCITY</small><b>91%</b><em>+4%</em></div><div><small>THIS WEEK</small><b>128h</b><em>On track</em></div></div><div class="dashboard-row"><div class="chart"><small>PROJECT MOMENTUM</small><span><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div><div class="activity"><small>LATEST ACTIVITY</small><p><i></i> Prototype approved</p><p><i></i> Research complete</p><p><i></i> Sprint started</p></div></div></div></div></div></div>
+            <div class="card-copy"><h3 data-i18n="work.product.title">Digital products</h3><p data-i18n="work.product.body">Thoughtful interfaces and systems that make complex tools feel focused, useful and natural.</p></div>
+          </article>
+          <article class="work-card work-card--visual reveal">
+            <div class="card-meta"><span>04</span><span data-i18n="work.visual.meta">Supporting design</span></div>
+            <div class="visual-ui" aria-hidden="true"><div class="catalog-sheet catalog-sheet--back"><span>OBJECT / 08</span><b>Form follows<br />function.</b></div><div class="catalog-sheet catalog-sheet--front"><span>COLLECTION 2026</span><div class="render-object"><i></i></div><div class="catalog-spec"><b>Arc / 01</b><span>Oak · Steel · 740 mm</span></div></div></div>
+            <div class="card-copy"><h3 data-i18n="work.visual.title">3D &amp; visual design</h3><p data-i18n="work.visual.body">Product renders, catalogues and supporting brand assets that keep the whole customer experience coherent.</p></div>
+          </article>
+        </div>
+        <p class="concept-note reveal"><span data-i18n="work.note.label">Note</span><span data-i18n="work.note.body">The visuals above are original capability concepts created by Pomuna—not commissioned client projects.</span></p>
+      </section>
 
-    .shape-one {
-      width: 340px;
-      height: 340px;
-      top: -120px;
-      right: -80px;
-    }
+      <section class="process section-pad" id="process">
+        <div class="section-heading reveal"><div><p class="eyebrow" data-i18n="process.label">03 / The process</p><h2 data-i18n-html="process.title">Clear stages.<br />Room to refine.</h2></div><p data-i18n-html="process.subtitle">Collaborative and transparent.<br />Never a mysterious hand-off.</p></div>
+        <div class="process-list">
+          <article class="process-item reveal"><span>01</span><h3 data-i18n="process.one.title">Discover the real need</h3><p data-i18n="process.one.body">We unpack your business, audience, offer and goals in a focused kickoff conversation.</p><b data-i18n="process.one.tag">Discover</b></article>
+          <article class="process-item reveal"><span>02</span><h3 data-i18n="process.two.title">Structure the story</h3><p data-i18n="process.two.body">We define priorities, content, journeys and the page structure before styling begins.</p><b data-i18n="process.two.tag">Plan</b></article>
+          <article class="process-item reveal"><span>03</span><h3 data-i18n="process.three.title">Set the direction</h3><p data-i18n="process.three.body">We create the first visual direction and key screens so the experience becomes tangible early.</p><b data-i18n="process.three.tag">Design</b></article>
+          <article class="process-item process-item--highlight reveal"><span>04</span><h3 data-i18n="process.four.title">Review and refine</h3><p data-i18n="process.four.body">We meet, walk through the work, collect focused feedback and refine the direction together.</p><b data-i18n="process.four.tag">Collaborate</b></article>
+          <article class="process-item reveal"><span>05</span><h3 data-i18n="process.five.title">Build and test</h3><p data-i18n="process.five.body">The approved design becomes a responsive, accessible website tested across real screen sizes.</p><b data-i18n="process.five.tag">Develop</b></article>
+          <article class="process-item reveal"><span>06</span><h3 data-i18n="process.six.title">Launch and evolve</h3><p data-i18n="process.six.body">We launch carefully, hand everything over clearly, and stay available for useful improvements.</p><b data-i18n="process.six.tag">Support</b></article>
+        </div>
+      </section>
 
-    .shape-two {
-      width: 500px;
-      height: 500px;
-      bottom: -250px;
-      left: -170px;
-      animation-delay: -5s;
-    }
+      <section class="principles section-pad">
+        <p class="eyebrow reveal" data-i18n="standard.label">04 / Our standard</p>
+        <div class="principles-grid"><h2 class="reveal" data-i18n-html="standard.title">Clear enough to use.<br /><span>Distinct enough to remember.</span></h2><div class="principle-list reveal"><div><span>01</span><p data-i18n="standard.one">Strategy before decoration</p></div><div><span>02</span><p data-i18n="standard.two">Mobile from the beginning</p></div><div><span>03</span><p data-i18n="standard.three">Fast, accessible foundations</p></div><div><span>04</span><p data-i18n="standard.four">Details that earn attention</p></div></div></div>
+      </section>
 
-    .container {
-      position: relative;
-      width: min(90%, 880px);
-      padding: 72px 48px;
-      text-align: center;
-    }
+      <section class="contact section-pad" id="contact">
+        <div class="contact-top reveal"><p class="eyebrow" data-i18n="contact.label">05 / Start something</p><span data-i18n="contact.available">Available for selected projects</span></div>
+        <h2 class="reveal" data-i18n-html="contact.title">Have something<br />worth <em>building?</em></h2>
+        <div class="contact-layout reveal"><div class="contact-intro"><a href="mailto:deniz@pomuna.com?subject=Project%20inquiry">deniz@pomuna.com <span>↗</span></a><p data-i18n="contact.body">Tell me where you are now and where you want to go. I’ll reply with a clear next step.</p></div><form class="project-form" id="project-form"><label><span data-i18n="form.name">Your name</span><input name="name" type="text" autocomplete="name" required /></label><label><span data-i18n="form.email">Email address</span><input name="email" type="email" autocomplete="email" required /></label><label><span data-i18n="form.company">Company</span><input name="company" type="text" autocomplete="organization" /></label><label><span data-i18n="form.type">What do you need?</span><select name="type"><option value="Website" data-i18n="form.type.website">Website or redesign</option><option value="Commerce" data-i18n="form.type.commerce">Commerce or catalogue</option><option value="Digital product" data-i18n="form.type.product">Digital product</option><option value="3D and visual design" data-i18n="form.type.visual">3D or visual design</option><option value="Not sure yet" data-i18n="form.type.unsure">Not sure yet</option></select></label><label class="form-message"><span data-i18n="form.message">A little about the project</span><textarea name="message" rows="4" required></textarea></label><div class="form-action"><p data-i18n="form.note">This opens a ready-to-send message in your email app.</p><button type="submit"><span data-i18n="form.send">Prepare enquiry</span><b>↗</b></button></div></form></div>
+      </section>
+    </main>
 
-    .logo {
-      width: 76px;
-      height: 76px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 26px;
-      border: 1px solid rgba(31, 48, 40, 0.25);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(12px);
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: -3px;
-    }
+    <footer><a class="brand brand--footer" href="#top"><img src="./assets/pomuna-mark.svg" alt="" /><span>Pomuna</span></a><p data-i18n-html="footer.location">Independent digital studio<br />Vienna · Working worldwide</p><div class="footer-right"><a href="#top" data-i18n="footer.top">Back to top ↑</a><span>© <span id="year"></span> Pomuna</span></div></footer>
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 22px;
-      color: #607465;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #79917d;
-      box-shadow: 0 0 0 6px rgba(121, 145, 125, 0.14);
-      animation: pulse 2s infinite;
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 0 auto;
-      color: #24382e;
-      font-size: clamp(52px, 9vw, 104px);
-      line-height: 0.95;
-      letter-spacing: -7px;
-    }
-
-    p {
-      max-width: 560px;
-      margin: 28px auto 0;
-      color: #66756d;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .line {
-      width: 80px;
-      height: 1px;
-      margin: 38px auto 24px;
-      background: rgba(31, 48, 40, 0.35);
-    }
-
-    .footer {
-      color: #839087;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
+    <script>
+      const copy = {
+        en: {
+          'nav.work':'What we build','nav.process':'Process','nav.about':'About','nav.start':'Start a project','hero.kicker':'Independent digital studio · Vienna / Worldwide','hero.title':'Websites with<br />a <em>point of view.</em>','hero.body':'Pomuna turns complex businesses into clear, memorable digital experiences—designed to earn attention and built to create action.','hero.explore':'Explore<br />the studio','marquee.strategy':'Strategy','marquee.web':'Web design','marquee.dev':'Development','marquee.threed':'3D & visual design','marquee.catalogues':'Catalogues','intro.label':'01 / The studio','intro.title':'Good design makes a business feel <span>obvious.</span>','intro.body':'No clutter. No vague promises. We find what matters, shape a distinctive direction, and build a website that guides the right people toward the next step.','intro.link':'How we work','work.label':'02 / What we build','work.title':'Different businesses.<br />One clear standard.','work.subtitle':'Flexible enough for your industry.<br />Focused enough to feel made for it.','work.service.meta':'Trust & enquiries','work.service.title':'Service businesses','work.service.body':'Confident websites that turn expertise into trust—and trust into conversations.','work.commerce.meta':'Catalogues & commerce','work.commerce.title':'Commerce & industry','work.commerce.body':'Structured product experiences that make discovery, comparison and quotation effortless.','work.product.meta':'Products & platforms','work.product.title':'Digital products','work.product.body':'Thoughtful interfaces and systems that make complex tools feel focused, useful and natural.','work.visual.meta':'Supporting design','work.visual.title':'3D & visual design','work.visual.body':'Product renders, catalogues and supporting brand assets that keep the whole customer experience coherent.','work.note.label':'Note','work.note.body':'The visuals above are original capability concepts created by Pomuna—not commissioned client projects.','process.label':'03 / The process','process.title':'Clear stages.<br />Room to refine.','process.subtitle':'Collaborative and transparent.<br />Never a mysterious hand-off.','process.one.title':'Discover the real need','process.one.body':'We unpack your business, audience, offer and goals in a focused kickoff conversation.','process.one.tag':'Discover','process.two.title':'Structure the story','process.two.body':'We define priorities, content, journeys and the page structure before styling begins.','process.two.tag':'Plan','process.three.title':'Set the direction','process.three.body':'We create the first visual direction and key screens so the experience becomes tangible early.','process.three.tag':'Design','process.four.title':'Review and refine','process.four.body':'We meet, walk through the work, collect focused feedback and refine the direction together.','process.four.tag':'Collaborate','process.five.title':'Build and test','process.five.body':'The approved design becomes a responsive, accessible website tested across real screen sizes.','process.five.tag':'Develop','process.six.title':'Launch and evolve','process.six.body':'We launch carefully, hand everything over clearly, and stay available for useful improvements.','process.six.tag':'Support','standard.label':'04 / Our standard','standard.title':'Clear enough to use.<br /><span>Distinct enough to remember.</span>','standard.one':'Strategy before decoration','standard.two':'Mobile from the beginning','standard.three':'Fast, accessible foundations','standard.four':'Details that earn attention','contact.label':'05 / Start something','contact.available':'Available for selected projects','contact.title':'Have something<br />worth <em>building?</em>','contact.body':'Tell me where you are now and where you want to go. I’ll reply with a clear next step.','form.name':'Your name','form.email':'Email address','form.company':'Company','form.type':'What do you need?','form.type.website':'Website or redesign','form.type.commerce':'Commerce or catalogue','form.type.product':'Digital product','form.type.visual':'3D or visual design','form.type.unsure':'Not sure yet','form.message':'A little about the project','form.note':'This opens a ready-to-send message in your email app.','form.send':'Prepare enquiry','footer.location':'Independent digital studio<br />Vienna · Working worldwide','footer.top':'Back to top ↑'
+        },
+        de: {
+          'nav.work':'Leistungen','nav.process':'Ablauf','nav.about':'Über Pomuna','nav.start':'Projekt starten','hero.kicker':'Unabhängiges Digitalstudio · Wien / Weltweit','hero.title':'Websites mit<br /><em>eigener Haltung.</em>','hero.body':'Pomuna verwandelt komplexe Unternehmen in klare, einprägsame digitale Erlebnisse—gestaltet für Aufmerksamkeit und gebaut für Wirkung.','hero.explore':'Studio<br />entdecken','marquee.strategy':'Strategie','marquee.web':'Webdesign','marquee.dev':'Entwicklung','marquee.threed':'3D & visuelles Design','marquee.catalogues':'Kataloge','intro.label':'01 / Das Studio','intro.title':'Gutes Design lässt ein Unternehmen <span>selbstverständlich wirken.</span>','intro.body':'Kein Durcheinander. Keine leeren Versprechen. Wir finden, was zählt, entwickeln eine unverwechselbare Richtung und bauen eine Website, die die richtigen Menschen zum nächsten Schritt führt.','intro.link':'So arbeiten wir','work.label':'02 / Was wir gestalten','work.title':'Unterschiedliche Unternehmen.<br />Ein klarer Anspruch.','work.subtitle':'Flexibel für Ihre Branche.<br />Fokussiert auf Ihr Unternehmen.','work.service.meta':'Vertrauen & Anfragen','work.service.title':'Dienstleistungsunternehmen','work.service.body':'Souveräne Websites, die Kompetenz in Vertrauen—und Vertrauen in Gespräche verwandeln.','work.commerce.meta':'Kataloge & Commerce','work.commerce.title':'Handel & Industrie','work.commerce.body':'Strukturierte Produkterlebnisse, die Suche, Vergleich und Angebotsanfragen mühelos machen.','work.product.meta':'Produkte & Plattformen','work.product.title':'Digitale Produkte','work.product.body':'Durchdachte Interfaces und Systeme, die komplexe Werkzeuge fokussiert, nützlich und selbstverständlich wirken lassen.','work.visual.meta':'Ergänzendes Design','work.visual.title':'3D & visuelles Design','work.visual.body':'Produktrenderings, Kataloge und begleitende Markenmaterialien für ein durchgängig stimmiges Kundenerlebnis.','work.note.label':'Hinweis','work.note.body':'Die gezeigten Visuals sind eigenständige Konzeptarbeiten von Pomuna—keine beauftragten Kundenprojekte.','process.label':'03 / Der Ablauf','process.title':'Klare Schritte.<br />Raum für Verfeinerung.','process.subtitle':'Kollaborativ und transparent.<br />Keine Übergabe ins Ungewisse.','process.one.title':'Den echten Bedarf verstehen','process.one.body':'In einem fokussierten Auftaktgespräch klären wir Unternehmen, Zielgruppe, Angebot und Ziele.','process.one.tag':'Entdecken','process.two.title':'Die Geschichte strukturieren','process.two.body':'Wir definieren Prioritäten, Inhalte, Wege und Seitenstruktur, bevor die Gestaltung beginnt.','process.two.tag':'Planen','process.three.title':'Die Richtung festlegen','process.three.body':'Wir entwickeln die erste visuelle Richtung und zentrale Ansichten, damit das Erlebnis früh greifbar wird.','process.three.tag':'Gestalten','process.four.title':'Gemeinsam prüfen und verfeinern','process.four.body':'Wir besprechen die Arbeit, sammeln gezieltes Feedback und verfeinern die Richtung gemeinsam.','process.four.tag':'Abstimmen','process.five.title':'Bauen und testen','process.five.body':'Das freigegebene Design wird zu einer responsiven, barrierearmen Website und auf realen Bildschirmgrößen getestet.','process.five.tag':'Entwickeln','process.six.title':'Veröffentlichen und weiterdenken','process.six.body':'Wir veröffentlichen sorgfältig, übergeben alles verständlich und bleiben für sinnvolle Verbesserungen erreichbar.','process.six.tag':'Begleiten','standard.label':'04 / Unser Anspruch','standard.title':'Klar genug zur Nutzung.<br /><span>Eigenständig genug, um in Erinnerung zu bleiben.</span>','standard.one':'Strategie vor Dekoration','standard.two':'Mobil von Anfang an','standard.three':'Schnelle, barrierearme Grundlagen','standard.four':'Details, die Aufmerksamkeit verdienen','contact.label':'05 / Etwas starten','contact.available':'Verfügbar für ausgewählte Projekte','contact.title':'Etwas, das es<br /><em>wert ist?</em>','contact.body':'Erzählen Sie mir, wo Sie stehen und wohin Sie möchten. Ich antworte mit einem klaren nächsten Schritt.','form.name':'Ihr Name','form.email':'E-Mail-Adresse','form.company':'Unternehmen','form.type':'Was benötigen Sie?','form.type.website':'Website oder Redesign','form.type.commerce':'Commerce oder Katalog','form.type.product':'Digitales Produkt','form.type.visual':'3D oder visuelles Design','form.type.unsure':'Noch nicht sicher','form.message':'Kurz zum Projekt','form.note':'Öffnet eine vorbereitete Nachricht in Ihrem E-Mail-Programm.','form.send':'Anfrage vorbereiten','footer.location':'Unabhängiges Digitalstudio<br />Wien · Weltweit tätig','footer.top':'Nach oben ↑'
+        }
+      };
+      const header = document.querySelector('.site-header');
+      const menuButton = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav');
+      const revealItems = document.querySelectorAll('.reveal');
+      const glow = document.querySelector('.cursor-glow');
+      const languageButtons = document.querySelectorAll('.lang-button');
+      const form = document.getElementById('project-form');
+      let currentLanguage = localStorage.getItem('pomuna-language') || 'en';
+      function setLanguage(language) {
+        currentLanguage = copy[language] ? language : 'en';
+        document.documentElement.lang = currentLanguage;
+        document.querySelectorAll('[data-i18n]').forEach(element => { const value = copy[currentLanguage][element.dataset.i18n]; if (value) element.textContent = value; });
+        document.querySelectorAll('[data-i18n-html]').forEach(element => { const value = copy[currentLanguage][element.dataset.i18nHtml]; if (value) element.innerHTML = value; });
+        languageButtons.forEach(button => button.classList.toggle('active', button.dataset.lang === currentLanguage));
+        localStorage.setItem('pomuna-language', currentLanguage);
       }
-
-      50% {
-        opacity: 0.55;
-        transform: scale(0.8);
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(0);
-      }
-
-      50% {
-        transform: translateY(28px) rotate(8deg);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 48px 20px;
-      }
-
-      h1 {
-        letter-spacing: -4px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="grid"></div>
-  <div class="shape shape-one"></div>
-  <div class="shape shape-two"></div>
-
-  <main class="container">
-    <div class="logo">P</div>
-
-    <div class="status">
-      <span class="dot"></span>
-      Website under construction
-    </div>
-
-    <h1>Pomuna is taking shape.</h1>
-
-    <p>
-      We are currently building our website.
-      A new digital experience will be available soon.
-    </p>
-
-    <div class="line"></div>
-
-    <div class="footer">
-      Pomuna · Coming Soon
-    </div>
-  </main>
-</body>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      setLanguage(currentLanguage);
+      languageButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+      window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+      menuButton.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }));
+      const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+      window.addEventListener('pointermove', event => { glow.style.left = `${event.clientX}px`; glow.style.top = `${event.clientY}px`; glow.style.opacity = '1'; }, { passive: true });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const subject = currentLanguage === 'de' ? `Projektanfrage von ${data.get('name')}` : `Project enquiry from ${data.get('name')}`;
+        const labels = currentLanguage === 'de' ? { name:'Name', email:'E-Mail', company:'Unternehmen', type:'Projektart', message:'Projekt' } : { name:'Name', email:'Email', company:'Company', type:'Project type', message:'Project' };
+        const body = `${labels.name}: ${data.get('name')}\n${labels.email}: ${data.get('email')}\n${labels.company}: ${data.get('company') || '—'}\n${labels.type}: ${data.get('type')}\n\n${labels.message}:\n${data.get('message')}`;
+        window.location.href = `mailto:deniz@pomuna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    </script>
+  </body>
 </html>
