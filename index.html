@@ -172,20 +172,25 @@
         window.location.href = `mailto:hello@pomuna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
 
-      const potatoScene = document.querySelector('.visual-ui');
       const potato = document.getElementById('potato-object');
       const pupils = potato.querySelectorAll('.potato-eye i');
-      potatoScene.addEventListener('pointermove', event => {
-        const rect = potatoScene.getBoundingClientRect();
-        const x = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width - .5) * 2));
-        const y = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height - .5) * 2));
-        potato.style.transform = `rotateX(${-y * 13}deg) rotateY(${x * 20}deg) rotateZ(${x * 2.5}deg) translate3d(${x * 5}px, ${y * 3}px, 18px)`;
-        pupils.forEach(pupil => { pupil.style.transform = `translate(${x * 4}px, ${y * 4}px)`; });
-      });
-      potatoScene.addEventListener('pointerleave', () => {
+      const resetPotato = () => {
         potato.style.transform = '';
         pupils.forEach(pupil => { pupil.style.transform = ''; });
-      });
+      };
+      window.addEventListener('pointermove', event => {
+        const rect = potato.getBoundingClientRect();
+        const visible = rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+        if (!visible) return resetPotato();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const x = Math.max(-1, Math.min(1, (event.clientX - centerX) / (window.innerWidth * .42)));
+        const y = Math.max(-1, Math.min(1, (event.clientY - centerY) / (window.innerHeight * .42)));
+        potato.style.transform = `rotateX(${-y * 16}deg) rotateY(${x * 24}deg) rotateZ(${x * 2.5}deg) translate3d(${x * 6}px, ${y * 4}px, 18px)`;
+        pupils.forEach(pupil => { pupil.style.transform = `translate(${x * 5}px, ${y * 5}px)`; });
+      }, { passive: true });
+      document.documentElement.addEventListener('mouseleave', resetPotato);
+      window.addEventListener('blur', resetPotato);
     </script>
   </body>
 </html>
