@@ -105,7 +105,7 @@
       <section class="contact section-pad" id="contact">
         <div class="contact-top reveal"><p class="eyebrow" data-i18n="contact.label">05 / Start something</p><span data-i18n="contact.available">Available for selected projects</span></div>
         <h2 class="reveal" data-i18n-html="contact.title">Have something<br />worth <em>building?</em></h2>
-        <div class="contact-layout reveal"><div class="contact-intro"><a href="mailto:hello@pomuna.com?subject=Project%20inquiry">hello@pomuna.com <span>↗</span></a><p data-i18n="contact.body">Tell me where you are now and where you want to go. I’ll reply with a clear next step.</p></div><div class="project-form-embed"><iframe src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=QgE3xz2ar0-OcPJoQP24beMva6nmJ6lDqlt46GK8fs5UMzgyUUUyRjg4UDdaTUZWUVVZMkNWNzE4Ry4u&amp;embed=true" title="Start a project with Pomuna" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="contact-layout reveal"><div class="contact-intro"><a href="mailto:hello@pomuna.com?subject=Project%20inquiry">hello@pomuna.com <span>↗</span></a><p data-i18n="contact.body">Tell me where you are now and where you want to go. I’ll reply with a clear next step.</p></div><form class="project-form" id="project-form"><label><span data-i18n="form.name">Your name</span><input name="name" type="text" autocomplete="name" required /></label><label><span data-i18n="form.email">Email address</span><input name="email" type="email" autocomplete="email" required /></label><label><span data-i18n="form.company">Company</span><input name="company" type="text" autocomplete="organization" /></label><label><span data-i18n="form.type">What do you need?</span><select name="type"><option value="Website" data-i18n="form.type.website">Website or redesign</option><option value="Commerce" data-i18n="form.type.commerce">Commerce or catalogue</option><option value="Digital product" data-i18n="form.type.product">Digital product</option><option value="3D and visual design" data-i18n="form.type.visual">3D or visual design</option><option value="Not sure yet" data-i18n="form.type.unsure">Not sure yet</option></select></label><label class="form-message"><span data-i18n="form.message">A little about the project</span><textarea name="message" rows="4" required></textarea></label><div class="form-action"><p data-i18n="form.note">This opens a ready-to-send message in your email app.</p><button type="submit"><span data-i18n="form.send">Prepare enquiry</span><b>↗</b></button></div></form></div>
       </section>
     </main>
 
@@ -144,6 +144,7 @@
       const revealItems = document.querySelectorAll('.reveal');
       const glow = document.querySelector('.cursor-glow');
       const languageButtons = document.querySelectorAll('.lang-button');
+      const form = document.getElementById('project-form');
       let currentLanguage = localStorage.getItem('pomuna-language') || 'en';
       function setLanguage(language) {
         currentLanguage = copy[language] ? language : 'en';
@@ -162,6 +163,15 @@
       const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.12 });
       revealItems.forEach(item => observer.observe(item));
       window.addEventListener('pointermove', event => { glow.style.left = `${event.clientX}px`; glow.style.top = `${event.clientY}px`; glow.style.opacity = '1'; }, { passive: true });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const subject = currentLanguage === 'de' ? `Projektanfrage von ${data.get('name')}` : `Project enquiry from ${data.get('name')}`;
+        const labels = currentLanguage === 'de' ? { name:'Name', email:'E-Mail', company:'Unternehmen', type:'Projektart', message:'Projekt' } : { name:'Name', email:'Email', company:'Company', type:'Project type', message:'Project' };
+        const body = `${labels.name}: ${data.get('name')}\n${labels.email}: ${data.get('email')}\n${labels.company}: ${data.get('company') || '—'}\n${labels.type}: ${data.get('type')}\n\n${labels.message}:\n${data.get('message')}`;
+        window.location.href = `mailto:hello@pomuna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+
       const potato = document.getElementById('potato-object');
       const pupils = potato.querySelectorAll('.potato-eye i');
       const resetPotato = () => {
